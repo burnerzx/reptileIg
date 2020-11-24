@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS 'reptiledata' CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+DROP TABLE IF EXISTS `reptiledata`.`myclub_ig`;
+
+CREATE TABLE IF NOT EXISTS `reptiledata`.`myclub_ig`(
+	`id` BIGINT(20)  NOT NULL AUTO_INCREMENT COMMENT '主鍵',
+	`img_name` VARCHAR(50) COMMENT '圖片名字',
+	`img_url` TEXT COMMENT '圖片URL',
+	`remark` VARCHAR(255) COMMENT '備註',
+	`create_time` DATETIME NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+	`update_time` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+	PRIMARY KEY (`id`)
+)
+ENGINE = InnoDB
+COMMENT = 'IG';
